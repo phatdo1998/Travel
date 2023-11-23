@@ -21,7 +21,9 @@ const ListTour = ({
     <div
       className={` border  ${
         col === 4 ? "xxl:w-1/4" : "xxl:w-1/5"
-      } w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-12px)] `}
+      } w-full md:w-[calc(50%-20px)] lg:w-[calc(33.33%-12px)] ${
+        col === 3 ? "xxl:w-[calc(33%-20px)]" : ""
+      }`}
     >
       <div className="h-[200px] cursor-pointer">
         <Image

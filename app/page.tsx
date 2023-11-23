@@ -1,14 +1,13 @@
+import CountUpHome from "@/components/CountUpHome";
+import DestinationSwiper from "@/components/DestinationSwiper";
 import ListTour from "@/components/ListTour";
+import SelectHome from "@/components/SelectHome";
+import TestimonySwiper from "@/components/TestimonySwiper";
 import TitleTour from "@/components/TitleTour";
+import { Input } from "antd";
+import axios from "axios";
 import Image from "next/image";
-import {
-  FaFacebookF,
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaTwitter,
-} from "react-icons/fa";
-import { BsFillChatLeftTextFill, BsInstagram } from "react-icons/bs";
-import { IoMdMail } from "react-icons/io";
+import { BsFillChatLeftTextFill } from "react-icons/bs";
 import "swiper/css";
 import "swiper/css/pagination";
 import "../scss/home.scss";
@@ -17,12 +16,6 @@ import {
   CertificationInterface,
   TopTourInterface,
 } from "./interfaces";
-import CountUpHome from "@/components/CountUpHome";
-import DestinationSwiper from "@/components/DestinationSwiper";
-import SelectHome from "@/components/SelectInput";
-import TestimonySwiper from "@/components/TestimonySwiper";
-import axios from "axios";
-import { Input } from "antd";
 
 const getCertification = () => {
   return axios.get("http://localhost:3000/api/certification");
@@ -392,7 +385,7 @@ export default async function Home() {
       </div>
 
       {/* footer */}
-      <div className="flex justify-center items-center bg-[#222831] flex-col py-20 ">
+      {/* <div className="flex justify-center items-center bg-[#222831] flex-col py-20 ">
         <div className="xxl:w-[1110px] w-full flex justify-between gap-x-10 lg:gap-x-0 sx:px-5 xxl:px-0 sx:flex-col md:flex-row ">
           <div className="flex flex-col space-y-10 lg:space-y-0 lg:flex-row flex-1 lg:space-x-8">
             <div className="flex-1 md:h-1/2 h-full">
@@ -461,7 +454,7 @@ export default async function Home() {
             Colorlib
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
