@@ -16,6 +16,7 @@ import {
   CertificationInterface,
   TopTourInterface,
 } from "./interfaces";
+import ListBlogs from "@/components/ListBlogs";
 
 const getCertification = () => {
   return axios.get("http://localhost:3000/api/certification");
@@ -81,7 +82,7 @@ export default async function Home() {
       >
         {/* header */}
         <div className="flex items-center justify-center pt-28 px-5 ">
-          <div className="w-[1110px]  flex flex-col lg:mt-20">
+          <div className="width-primary  flex flex-col lg:mt-20">
             <h1 className="md:text-6xl font-bold text-white sx:text-5xl">
               Explore
             </h1>
@@ -136,7 +137,7 @@ export default async function Home() {
 
       {/* Destination */}
       <div className="flex justify-center items-center px-5 ">
-        <div className="xxl:w-[1110px] w-full">
+        <div className="xxl:width-primary w-full">
           <TitleTour
             heading="Featured"
             title="Destination"
@@ -156,6 +157,7 @@ export default async function Home() {
             title={"Tour Packages"}
             subTitle="Special Offers"
           />
+
           <div className="xxl:px-14 w-full flex items-center px-5 md:justify-between md:gap-y-6 lg:justify-start sx:flex-wrap xxl:flex-nowrap lg:gap-[18px] gap-y-5">
             {topTour.map((tour: TopTourInterface, index: number) => {
               return (
@@ -245,21 +247,21 @@ export default async function Home() {
 
       {/* Testimony */}
       <div className="bg-[#f8faff] flex justify-center items-center pb-20 ">
-        <div className="xxl:w-[1110px] px-5 w-full flex items-center justify-between xxl:gap-x-24 md:gap-x-10 md:flex-row flex-col mt-8">
+        <div className="xxl:width-primary px-5 w-full flex items-center justify-between xxl:gap-x-24 md:gap-x-10 md:flex-row flex-col mt-8">
           <div className="w-full md:w-1/2">
-            <p className="text-sm text-[#4d4d4d] mb-4">
+            <p className="text-sm color-text-primary mb-4">
               Best Directory Website
             </p>
             <div className="text-3xl mb-5">
               <span className="font-bold ">Why</span> Choose Us?
             </div>
-            <p className="mb-4 text-sm text-[#4d4d4d]">
+            <p className="mb-4 text-sm color-text-primary">
               Far far away, behind the word mountains, far from the countries
               Vokalia and Consonantia, there live the blind texts. Separated
               they live in Bookmarksgrove right at the coast of the Semantics, a
               large language ocean.
             </p>
-            <div className="text-sm text-[#4d4d4d]">
+            <div className="text-sm color-text-primary">
               Even the all-powerful Pointing has no control about the blind
               texts it is an almost unorthographic life.
             </div>
@@ -271,7 +273,7 @@ export default async function Home() {
           </div>
 
           <div className="md:w-1/2 w-full">
-            <p className="text-sm text-[#4d4d4d] my-4">Testimony</p>
+            <p className="text-sm color-text-primary my-4">Testimony</p>
             <div className="text-3xl mb-5">
               <span className="font-bold ">Our</span> Guests Says
             </div>
@@ -291,7 +293,7 @@ export default async function Home() {
             title={"Restaurants"}
             subTitle="Special Offers"
           />
-          <div className="xxl:w-[1110px] w-full flex justify-center items-center xxl:px-0 px-5 md:justify-start md:gap-y-6 lg:justify-between sx:flex-wrap xxl:flex-nowrap gap-y-5 gap-x-[18px]">
+          <div className="xxl:width-primary w-full flex justify-center items-center xxl:px-0 px-5 md:justify-start md:gap-y-6 lg:justify-between sx:flex-wrap xxl:flex-nowrap gap-y-5 gap-x-[18px]">
             {restaurants.map((item: any, index: number) => {
               return (
                 <ListTour
@@ -319,38 +321,9 @@ export default async function Home() {
             title={"& Articles"}
             subTitle="Recent Blog"
           />
-          <div className="xxl:w-[1110px] w-full flex justify-center items-center xxl:px-0 px-5 md:justify-start md:gap-y-6 lg:justify-between sx:flex-wrap xxl:flex-nowrap gap-y-5 gap-x-[18px]">
+          <div className="xxl:width-primary w-full flex justify-center items-center xxl:px-0 px-5 md:justify-start md:gap-y-6 lg:justify-between sx:flex-wrap xxl:flex-nowrap gap-y-5 gap-x-[18px]">
             {blogs.map((blog: BlogsInterface, index: number) => {
-              return (
-                <div
-                  key={index}
-                  className={` border w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-12px)] `}
-                >
-                  <div className="h-[200px] cursor-pointer">
-                    <Image
-                      src={blog.image}
-                      alt="packages"
-                      className="object-cover w-full h-full"
-                      width={500}
-                      height={500}
-                      priority
-                    />
-                  </div>
-                  <div className="p-4">
-                    <div className="text-sm text-[#b3b3b3] my-5">
-                      {blog.title}
-                    </div>
-                    <p className="text-xl">{blog.description}</p>
-                    <div className="text-sm text-[#b3b3b3] mt-4">
-                      {blog.month} {blog.day}, {blog.year} {blog.author}
-                    </div>
-                    <div className="flex items-center gap-1 mt-3">
-                      <BsFillChatLeftTextFill color="#b3b3b3" size="16" />
-                      <p className="text-[#b3b3b3] text-sm">{blog.message}</p>
-                    </div>
-                  </div>
-                </div>
-              );
+              return <ListBlogs key={index} blog={blog} />;
             })}
           </div>
         </div>
@@ -358,7 +331,7 @@ export default async function Home() {
 
       {/* feedback */}
       <div className="flex justify-center items-center bg-gradient-to-br from-teal-400 to-green-400 h-[500px] px-3">
-        <div className="xxl:w-[1110px] w-full flex justify-center items-center">
+        <div className="xxl:width-primary w-full flex justify-center items-center">
           <div className="text-center w-[650px]">
             <h1 className="text-[40px] text-white mb-3">
               Subcribe to our Newsletter
@@ -383,78 +356,6 @@ export default async function Home() {
           </div>
         </div>
       </div>
-
-      {/* footer */}
-      {/* <div className="flex justify-center items-center bg-[#222831] flex-col py-20 ">
-        <div className="xxl:w-[1110px] w-full flex justify-between gap-x-10 lg:gap-x-0 sx:px-5 xxl:px-0 sx:flex-col md:flex-row ">
-          <div className="flex flex-col space-y-10 lg:space-y-0 lg:flex-row flex-1 lg:space-x-8">
-            <div className="flex-1 md:h-1/2 h-full">
-              <div className="text-white text-lg mb-10">dirEngine</div>
-              <p className="text-white text-opacity-70 sx:mb-8 text-base lg:mb-20">
-                Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts.
-              </p>
-              <div className="flex items-center space-x-4">
-                <div className="bg-white bg-opacity-5 rounded-full w-14 h-14 flex justify-center items-center cursor-pointer">
-                  <FaTwitter size="24" color="white" />
-                </div>
-                <div className="bg-white bg-opacity-5 rounded-full w-14 h-14 flex justify-center items-center cursor-pointer">
-                  <FaFacebookF size="24" color="white" />
-                </div>
-                <div className="bg-white bg-opacity-5 rounded-full w-14 h-14 flex justify-center items-center cursor-pointer">
-                  <BsInstagram size="24" color="white" />
-                </div>
-              </div>
-            </div>
-            <div className="flex-1 md:h-1/2 ">
-              <div className="text-white text-lg mb-10">Information</div>
-              <div className="text-white text-opacity-70 flex flex-col space-y-6 text-base">
-                <div>About</div>
-                <div>Service</div>
-                <div>Terms and Conditions</div>
-                <div>Become a partner</div>
-                <div>Best Price Guarantee</div>
-                <div>Privacy and Policy</div>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col space-y-10 md:space-y-0 lg:flex-row flex-1">
-            <div className="flex-1 mt-10 md:mt-0  md:h-1/2">
-              <div className="text-white text-lg mb-10">Customer Support</div>
-              <div className="text-white text-opacity-70 flex flex-col space-y-6 text-base">
-                <div>FAQ</div>
-                <div>Payment Option</div>
-                <div>Booking Tips</div>
-                <div>How it works</div>
-                <div>Contact Us</div>
-              </div>
-            </div>
-            <div className="flex-1 text-white text-opacity-70 md:h-1/2">
-              <div className="text-white text-lg mb-10">Have a Questions?</div>
-              <div className="flex justify-center space-x-5 ">
-                <FaMapMarkerAlt size="24" color="white" />
-                <p className="text-base ">
-                  203 Fake St. Mountain View, San Francisco, California, USA
-                </p>
-              </div>
-              <div className="flex items-center space-x-5 my-6">
-                <FaPhoneAlt size="24" color="white" />
-                <p className="text-base ">+2 392 3929 210</p>
-              </div>
-              <div className="flex items-center space-x-5">
-                <IoMdMail size="24" color="white" />
-                <p className="text-base ">info@yourdomain.com</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="mt-24 px-5">
-          <div className="text-white text-opacity-70 text-base text-center">
-            Copyright ©2023 All rights reserved | This template is made with by
-            Colorlib
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 }

@@ -16,3 +16,15 @@ html {
   margin: 0 auto;
   width: 100%;
 }
+
+@layer components {
+  .color-text-primary {
+    @apply text-[#4d4d4d];
+  }
+}
+
+@layer components {
+  .width-primary {
+    @apply w-[1110px];
+  }
+}

@@ -47,11 +47,11 @@ const ListTour = ({
           <AiFillStar color="red" size="14" />
           <span className="text-xs">{rating} Rating</span>
         </div>
-        <p className={`text-[#4d4d4d] text-sm ${time ? "" : "my-3"}`}>
+        <p className={`color-text-primary text-sm ${time ? "" : "my-3"}`}>
           {description}
         </p>
         {time && (
-          <div className="text-sm text-[#4d4d4d] my-3">
+          <div className="text-sm color-text-primary my-3">
             {days} days {nights} nights
           </div>
         )}
@@ -59,7 +59,7 @@ const ListTour = ({
         <div className="flex justify-between items-center border-t border-grayl-100 pt-[10px]">
           <div className="flex items-center space-x-1">
             <BsMap />
-            <div className="text-sm text-[#4d4d4d]">{address}</div>
+            <div className="text-sm color-text-primary">{address}</div>
           </div>
           <button className="bg-[#8bc34a] rounded-[4px] text-white text-sm p-1 cursor-pointer">
             <div className="">Discover</div>

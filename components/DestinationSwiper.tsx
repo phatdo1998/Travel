@@ -73,7 +73,7 @@ const DestinationSwiper = ({ data }: any) => {
               </div>
               <div className="p-4 border border-gray-200 ">
                 <h2 className="text-lg mb-2">{value.name}</h2>
-                <div className="text-[#4d4d4d] text-sm">
+                <div className="color-text-primary text-sm">
                   {value.listing} Listing
                 </div>
               </div>

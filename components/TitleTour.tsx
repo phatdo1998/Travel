@@ -10,8 +10,8 @@ const TitleTour = ({
   subTitle?: string;
 }) => {
   return (
-    <div className="xxl:w-[1110px] w-full px-5 xxl:px-0">
-      <div className="text-[#4d4d4d] my-5 md:mt-10 md:mb-5 lg:mt-20">
+    <div className="xxl:width-primary w-full px-5 xxl:px-0">
+      <div className="color-text-primary my-5 md:mt-10 md:mb-5 lg:mt-20">
         {subTitle}
       </div>
       <h1 className="text-3xl lg:mb-20 sx:mb-10 ">

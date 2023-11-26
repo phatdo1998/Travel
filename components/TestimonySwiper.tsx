@@ -48,14 +48,16 @@ const TestimonySwiper = ({ guests }: any) => {
                 />
               </div>
               <div className="w-[80%] px-3">
-                <p className="text-sm text-[#4d4d4d] leading-6">
+                <p className="text-sm color-text-primary leading-6">
                   {guest.description}
                 </p>
                 <div className="mt-12">
                   <div className="text-black text-base font-semibold">
                     Dennis Green
                   </div>
-                  <p className="text-[13px] text-[#4d4d4d]">{guest.address}</p>
+                  <p className="text-[13px] color-text-primary">
+                    {guest.address}
+                  </p>
                 </div>
               </div>
             </div>

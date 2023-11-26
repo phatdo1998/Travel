@@ -26,9 +26,7 @@ const config: Config = {
     //   primary: "#f85959",
     //   gray: "#4d4d4d",
     // },
-    // backgroundColor: {
-    //   green: "linear-gradient(135deg, #2ebdc4 0%, #68e5b2 100%);",
-    // },
+
     fontFamily: {
       popins: ["Poppins", "sans-serif"],
     },
